@@ -1,5 +1,10 @@
-def incr(x):
-    return x + 1
+from flask import Flask
 
-def test_incr():
-    assert incr(3) == 4
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, world!'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
